@@ -2,13 +2,9 @@ import { required } from "../utils/assertElements.js";
 import { page_url } from "../utils/wiki-urls.js";
 
 type ResultsType = {
-  ns: number;
   pageid: number;
-  size: number;
   snippet: string;
-  timestamp: string;
   title: string;
-  wordcount: number;
 };
 
 const resultsDOM = required<HTMLDivElement>(".results");
