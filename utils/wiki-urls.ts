@@ -7,4 +7,4 @@ export const url =
 // format=json json response
 // "origin=*" fix cors errors
 
-export const page_url = "href=http://en.wikipedia.org/?curid=${pageid}";
+export const page_url = "http://en.wikipedia.org/?curid=";
