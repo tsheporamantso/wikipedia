@@ -1,5 +1,4 @@
 import { required } from "../utils/assertElements.js";
-import { url, page_url } from "../utils/wiki-urls.js";
 import fetchPages from "./fetchPages.js";
 
 const formDOM = required<HTMLFormElement>(".form");
