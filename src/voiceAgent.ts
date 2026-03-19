@@ -19,13 +19,11 @@ const recognition = new SpeechRecognition();
 recognition.lang = "en-US";
 recognition.continuous = false;
 
-recognition.onend = () => {
-  voiceBtn.classList.remove("listening");
-};
-
 voiceBtn.addEventListener("click", () => {
   recognition.start();
 });
+
+recognition.onend = () => voiceBtn.classList.remove("listening");
 
 recognition.onresult = function (event: any) {
   const transcript = event.results[0][0].transcript;
