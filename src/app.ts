@@ -1,5 +1,6 @@
 import { required } from "../utils/assertElements.js";
 import fetchPages from "./fetchPages.js";
+import "./voiceAgent.js";
 
 const formDOM = required<HTMLFormElement>(".form");
 const inputDOM = required<HTMLFormElement>(".form-input");
