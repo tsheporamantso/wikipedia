@@ -1,5 +1,6 @@
 import { required } from "../utils/assertElements.js";
 import fetchPages from "./fetchPages.js";
+import "./themeToggle.js";
 import "./voiceAgent.js";
 
 const formDOM = required<HTMLFormElement>(".form");
@@ -11,7 +12,7 @@ formDOM.addEventListener("submit", function (e) {
   const value = inputDOM.value;
   if (!value) {
     resultsDOM.innerHTML =
-      '<div class="error">please enter valid search term</div>';
+      '<div class="error">Enter a search term to consult the stacks.</div>';
     return;
   }
   // clear previous error
