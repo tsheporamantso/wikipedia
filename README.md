@@ -27,14 +27,13 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Recipe App <a name="about-project"></a>
+# 📖 Wikipedia Search <a name="about-project"></a>
 
-**Wikipedia Search** It's a clone search engine application built with vanilla JavaScript,TypeScript and API integration. User can submit a prompt in the input field and application will return results.
+A single-page search application built with vanilla TypeScript and the Wikipedia REST API. Submit a topic in the input field (or speak it via the mic) and the app returns matching articles as reference-style result cards.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -46,12 +45,12 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://javascript.info/">JavaScript</a></li>
-  </ul>
+  <summary>Frontend</summary>
   <ul>
     <li><a href="https://www.typescriptlang.org/docs/">TypeScript</a></li>
+  </ul>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript (ES modules)</a></li>
   </ul>
 </details>
 
@@ -59,10 +58,11 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **RESTful API integration**
+- **Wikipedia REST API integration**
 - **Search input field**
-- **Search button**
-- **Responsive CSS media query**
+- **Voice search** using the browser Web Speech API
+- **Light/dark theme toggle** with persisted preference
+- **Responsive CSS layout**
 - **Synopsis search results in card form with title**
 - **Detailed Wikipedia page on click of card**
 
@@ -86,9 +86,9 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- Install TypeScript using [link](https://www.typescriptlang.org/docs/)
-- Install Visual Studio Code using [link](https://code.visualstudio.com/)
+- Install [TypeScript](https://www.typescriptlang.org/download) compiler (`tsc`) globally
 - Install NodeJS using [link](https://nodejs.org/en/download)
+- (Optional) Visual Studio Code using [link](https://code.visualstudio.com/)
 
 ### Setup
 
@@ -102,36 +102,27 @@ Clone this repository to your desired folder:
 
 ### Install
 
-Install this project with:
-
-```sh
-  tsc --init
-```
+Compile the TypeScript source to `dist/` (there is no `package.json` or npm install — the compiler is used directly):
 
 ```sh
   tsc --watch
 ```
 
-```sh
-  $ live-server
-```
+> Note: do **not** run `tsc --init` — it would overwrite the project's existing `tsconfig.json`.
 
 ### Usage
 
-To run the project, execute the following command:
-run the result on the terminal through:
+Serve the folder statically (the compiled `dist/` output is what the browser loads):
 
 ```sh
-  $ live-server
+  live-server
 ```
+
+Open the served URL and search for any topic.
 
 ### Run tests
 
-To run tests, execute the following command on the terminal
-
-```sh
-  bundle exec rspec
-```
+There are currently no automated tests or configured test runner for this project.
 
 ### Deployment
 
@@ -156,7 +147,8 @@ To run tests, execute the following command on the terminal
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Jest Tests**
-- [ ] **Update styles with Tailwind or Bootstrap**
+- [ ] **Results pagination and caching**
+- [ ] **AI-assisted query expansion** (see [_plans/ai-integration.md](./_plans/ai-integration.md))
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -193,6 +185,6 @@ I would like to thank:
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/tsheporamantso/wikipedia/blob/b4544cdd61d078992233357c657bda090c5df4ba/LICENSE) licensed.
+This project is [MIT](https://github.com/tsheporamantso/wikipedia/blob/main/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
