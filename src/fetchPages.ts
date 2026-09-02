@@ -12,13 +12,14 @@ async function fetchPages(searchValue: string) {
     const results = data.query.search;
     if (results.length === 0) {
       resultsDOM.innerHTML =
-        '<div class="error">no matching results please try again</div>';
+        '<div class="error">Nothing matched that topic — try a different term.</div>';
       return;
     }
     resultsDOM.innerHTML = "";
     renderResults(results);
   } catch (error) {
-    resultsDOM.innerHTML = '<div class="error">there was an error...</div>';
+    resultsDOM.innerHTML =
+      '<div class="error">The reference desk couldn&apos;t reach Wikipedia — try again.</div>';
   }
 }
 
